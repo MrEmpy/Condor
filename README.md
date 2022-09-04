@@ -25,14 +25,14 @@
 | Mac | not tested | not tested | not tested | not tested |
 | WSL | ✅ | ✅ | ✅ | ✅ |
 
-It is recommended to run the tool in a WSL environment, as you will need to generate shellcodes using msfvenom and compile to EXE using pyinstaller.
-
 ## Help
 
 ![](assets/help.png)
 
 
 ## Usage
+
+It is recommended to run the tool in a WSL environment, as you will need to generate shellcodes using msfvenom and compile to EXE using pyinstaller.
 
 ```
 $ git clone https://github.com/MrEmpy/Condor.git
