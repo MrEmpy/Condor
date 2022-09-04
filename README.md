@@ -12,6 +12,7 @@
 
 * Easy to use
 * Bypass most AVs/EDRs/XDRs
+* Two XOR encryption process and an obfuscation
 * The generated file is less than 7mb
 * Using custom shellcode
 * Fake signature on executable
