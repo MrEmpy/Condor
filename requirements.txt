@@ -1,0 +1,4 @@
+pyinstaller
+tinyaes
+colorama
+Cython
