@@ -150,7 +150,8 @@ def compile(key, scname, exename):
     subprocess.call(f'pyinstaller.exe --onefile --noconsole --distpath . -i {icon} -n "{scname}" --key={key} workbench/{exename}.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def custompayload():
-    print()
+    print(f'{Fore.LIGHTRED_EX}[-]{Fore.LIGHTWHITE_EX} This feature will be added in the future')
+    return
 
 def randchar(charlen, characters=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(characters) for _ in range(int(charlen)))
