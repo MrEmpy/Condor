@@ -19,7 +19,7 @@
 
 ## Environment support
 
-| OS/Subsystem | Installation of All Requirements | Compilation | EXE Execution |
+| OS/Subsystem | | Installation of All Requirements | Compilation | EXE Execution |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | Windows | ❌ | ✅ | ✅ | ✅ |
 | Linux | ✅ | ❌ | ❌ | ❌ |
