@@ -11,7 +11,7 @@
 ## Benefits
 
 * Easy to use
-* Bypass most AVs/EDRs/XDRs
+* Bypass multiple AVs/EDRs/XDRs
 * Two XOR encryption process and an obfuscation
 * The generated file is less than 7mb
 * Using custom shellcode
