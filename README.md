@@ -19,12 +19,12 @@
 
 ## Environment support
 
-| OS/Subsystem | | Installation of All Requirements | Compilation | EXE Execution |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| Windows | ❌ | ✅ | ✅ | ✅ |
-| Linux | ✅ | ❌ | ❌ | ❌ |
-| Mac | not tested | not tested | not tested | not tested |
-| WSL | ✅ | ✅ | ✅ | ✅ |
+| OS/Subsystem | Installation of All Requirements | Compilation | EXE Execution |
+| ----------- | ----------- | ----------- | ----------- |
+| Windows | ❌ | ✅ | ✅ |
+| Linux | ✅ | ❌ | ❌ |
+| Mac | not tested | not tested | not tested |
+| WSL | ✅ | ✅ | ✅ |
 
 ## Help
 
