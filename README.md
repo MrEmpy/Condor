@@ -22,7 +22,7 @@
 | OS/Subsystem | Installation of All Requirements | Compilation | EXE Execution |
 | ----------- | ----------- | ----------- | ----------- |
 | Windows | ❌ | ✅ | ✅ |
-| Linux | ✅ | ❌ | ❌ |
+| Linux | ✅ | ✅ | ❌ |
 | Mac | not tested | not tested | not tested |
 | WSL | ✅ | ✅ | ✅ |
 
