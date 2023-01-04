@@ -21,7 +21,7 @@ def banner():
     ░ ░          ░ ░           ░    ░        ░ ░     ░     
     ░                             ░                        
 
-                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v2.1{Fore.LIGHTRED_EX}]
+                        {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Condor v2.2{Fore.LIGHTRED_EX}]
                     {Fore.LIGHTRED_EX}[{Fore.LIGHTWHITE_EX}Developed by MrEmpy{Fore.LIGHTRED_EX}]
 
 ''')
@@ -185,7 +185,7 @@ def linuxcompile(key, scname, exename):
         icon = 'icons/cmd.ico'
         scname = 'Command Prompt'
     print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Compile using the command:')
-    print(f'wine "/home/{current_user}/.wine/drive_c/users/{current_user}/AppData/Local/Programs/Python/Python37/Scripts/pyinstaller.exe" --onefile --noconsole --distpath {os.getcwd()}/ -i {os.getcwd()}/{icon} -n "{scname}" --key={key} {os.getcwd()}/workbench/{exename}.py')
+    print(f'sudo wine "/root/.wine/drive_c/users/root/AppData/Local/Programs/Python/Python37/Scripts/pyinstaller.exe" --onefile --noconsole --distpath {os.getcwd()}/ -i {os.getcwd()}/{icon} -n "{scname}" --key={key} {os.getcwd()}/workbench/{exename}.py')
     #os.system(f'wine "/home/{current_user}/.wine/drive_c/users/{current_user}/AppData/Local/Programs/Python/Python37/Scripts/pyinstaller.exe" --onefile --noconsole --distpath {os.getcwd()}/ -i {os.getcwd()}/{icon} -n "{scname}" --key={key} {os.getcwd()}/workbench/{exename}.py') #, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
 
 def custompayload():
