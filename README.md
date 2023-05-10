@@ -48,3 +48,9 @@ $ python3 condor.py -p windows/x64/shell/reverse_tcp -lh <LOCAL HOST> -lp <LOCAL
 It is necessary to have wine installed on the machine to be able to install Python. Install as shown in the screenshot:
 
 ![](assets/python-install.png)
+
+## Buy me a coffee?
+
+<img src="https://static.livepix.gg/images/logo.svg" height="50" widght="50">
+
+[LivePix](https://livepix.gg/mrempy)
