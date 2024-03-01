@@ -51,10 +51,11 @@ It is necessary to have wine installed on the machine to be able to install Pyth
 
 ## Buy me a coffee?
 
-<img src="https://static.livepix.gg/images/logo.svg" height="50" widght="50">
-
-[LivePix](https://livepix.gg/mrempy)
-
-<img src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo" height="50" widght="50">
-
-[Buy me a coffe](https://www.buymeacoffee.com/mrempy)
+<a href="https://pixgg.com/MrEmpy" target="_blank">
+  <img src="https://pixgg.com/img/logo-darkmode.046d3b61.svg" height="30" widght="30">
+</a>
+</br>
+</br>
+<a href="https://www.buymeacoffee.com/mrempy" target="_blank">
+  <img src="https://play-lh.googleusercontent.com/aMb_Qiolzkq8OxtQZ3Af2j8Zsp-ZZcNetR9O4xSjxH94gMA5c5gpRVbpg-3f_0L7vlo" height="50" widght="50">
+</a>
